@@ -1,0 +1,27 @@
+package html
+
+templ Layout(title string) {
+	<html class="h-full" lang="en-US">
+		<head>
+			<title>{ title }</title>
+			<meta name="description" content="Find movies!"/>
+			<meta name="viewport" content="width=device-width, initial-scale=1"/>
+			<meta charset="utf-8"/>
+			<link rel="shortcut icon" href="/public/favicon.ico" type="image/x-icon"/>
+			<link rel="stylesheet" href="/public/global.css"/>
+			<script src="/public/htmx@1.9.6.js" defer></script>
+			<script src="/public/ws@1.9.6.js" defer></script>
+			<script src="/public/hyperscript@0.9.12.js" defer></script>
+			<script type="module" src="https://cdn.jsdelivr.net/npm/emoji-picker-element@^1/index.js" defer></script>
+			<script type="module" src="https://unpkg.com/@github/relative-time-element@latest/dist/bundle.js" defer></script>
+		</head>
+		<body class="h-full" hx-boost>
+			<main class="max-w-screen-sm mx-auto h-full">
+				{ children... }
+			</main>
+			<script type="text/hyperscript">
+				on htmx:load call htmx.logAll()
+			</script>
+		</body>
+	</html>
+}

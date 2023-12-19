@@ -1,0 +1,13 @@
+{
+	"scripts": {
+		"build": "npx tailwindcss -m -i ./views/html/public/tailwind.css -o ./views/html/public/global.css",
+		"dev": "npm run build -- --watch"
+	},
+	"devDependencies": {
+		"daisyui": "^4.4.20",
+		"prettier": "^3.1.1",
+		"prettier-plugin-tailwindcss": "^0.5.9",
+		"tailwindcss": "^3.3.7",
+		"typescript": "^5.3.3"
+	}
+}

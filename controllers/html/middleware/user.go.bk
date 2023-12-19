@@ -1,0 +1,31 @@
+package middleware
+
+import (
+	"github.com/danawoodman/go-echo-htmx-templ/models"
+	"github.com/gofiber/fiber/v2"
+	"github.com/gofiber/fiber/v2/middleware/session"
+)
+
+var sessionStore = session.New(session.Config{
+	CookieSameSite: "Strict",
+	CookieSecure:   true,
+})
+
+func UserToSessionMiddleware(c *fiber.Ctx) error {
+	sess, err := sessionStore.Get(c)
+	if err != nil {
+		return err
+	}
+	defer sess.Save()
+
+	user := sess.Get("user")
+	if user == nil {
+		dana := &models.User{ID: "2fc13342-9f86-4642-b7ae-2bc15290ef42", Username: "danawoodman"}
+		sess.Set("user", dana)
+		c.Locals("user", dana)
+	} else {
+		c.Locals("user", user.(*models.User))
+	}
+
+	return c.Next()
+}
