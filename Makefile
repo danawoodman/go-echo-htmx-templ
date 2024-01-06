@@ -8,13 +8,13 @@ dev:
 	@make -j dev-server dev-templ dev-tailwind
 
 dev-server:
-	@gochange -k -i '**/*.go' '**/*.html' -- go run ./cmd/server
+	@gochange -k -i '**/*.go' '**/*.html' 'views/public/**/*' -- go run ./cmd/server
 
 dev-templ:
 	@templ generate --watch
 
 dev-tailwind:
-	@npm run dev
+	@make ARGS="--watch" build-tailwind
 
 #-----------------------------------------------------
 # BUILD
@@ -30,7 +30,7 @@ build-templ:
 	@templ generate
 
 build-tailwind:
-	@npm run build
+	@npx tailwindcss -m -i ./tailwind.css -o ./views/public/styles.css $(ARGS)
 
 #-----------------------------------------------------
 # DATABASE

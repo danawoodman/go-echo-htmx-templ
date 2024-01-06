@@ -1,9 +1,14 @@
-package html
+package views
 
-templ Home(title string) {
+templ Home(title string, count int) {
 	@Layout(title) {
-		<section class="p-6">
-			<h1>Hi</h1>
+		<section class="flex flex-col gap-8">
+			<h1 class="text-4xl">
+				<strong>Hello, World</strong>
+			</h1>
+			<p>This page build with Golang, Echo, templ, TailwindCSS, DaisyUI and friends!</p>
+			<p>The below component uses htmx to update a count on click, try it out:</p>
+			@Count(count)
 		</section>
 	}
 }

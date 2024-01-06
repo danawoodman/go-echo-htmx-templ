@@ -1,0 +1,32 @@
+package views
+
+import "fmt"
+
+templ Count(count int) {
+	<section
+		hx-target="this"
+		hx-swap="outerHTML"
+		hx-push-url="false"
+		class="flex items-center flex-col gap-6  bg-base-300 rounded-lg mx-auto p-8"
+	>
+		<h2 class="text-5xl">
+			<strong>{ fmt.Sprintf("%d", count) }</strong>
+		</h2>
+		<fieldset class="flex items-center gap-4">
+			<button
+				hx-post="/count/dec"
+				class="btn btn-error"
+				type="submit"
+			>
+				-1
+			</button>
+			<button
+				hx-post="/count/inc"
+				class="btn btn-success"
+				type="submit"
+			>
+				+1
+			</button>
+		</fieldset>
+	</section>
+}
