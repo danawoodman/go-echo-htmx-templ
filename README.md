@@ -6,7 +6,7 @@ Tools:
 
 - [Go](https://golang.org/)
 - [Echo](https://echo.labstack.com/) - golang web framework
-- [templ]() - HTML templating
+- [templ](https://templ.guide) - HTML templating
 - [htmx](https://htmx.org/) - hypermedia controls
 - [Tailwind CSS](https://tailwindcss.com/) - styling
   - [DaisyUI](https://daisyui.com/) - Tailwind UI elements
