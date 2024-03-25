@@ -6,6 +6,7 @@ Tools:
 
 - [Go](https://golang.org/)
 - [Echo](https://echo.labstack.com/) - golang web framework
+- [templ]() - HTML templating
 - [htmx](https://htmx.org/) - hypermedia controls
 - [Tailwind CSS](https://tailwindcss.com/) - styling
   - [DaisyUI](https://daisyui.com/) - Tailwind UI elements
@@ -18,7 +19,14 @@ Tools:
 Install the latest version of Go and run the following commands:
 
 ```bash
+# download go dependencies
 go mod download
+
+# install templ CLI if you don't already have it
+go install github.com/a-h/templ/cmd/templ@latest
+
+# install tailwind + other deps
+npm install
 ```
 
 ## Development
