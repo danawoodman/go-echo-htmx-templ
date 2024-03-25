@@ -5,12 +5,13 @@
 Tools:
 
 - [Go](https://golang.org/)
-- [Echo](https://echo.labstack.com/)
-- [htmx](https://htmx.org/)
-- [Tailwind CSS](https://tailwindcss.com/)
-- [DaisyUI](https://daisyui.com/)
-- [Alpine.js](https://alpinejs.dev/)
-- [Charmbracelet's log](https://charm.sh/)
+- [Echo](https://echo.labstack.com/) - golang web framework
+- [htmx](https://htmx.org/) - hypermedia controls
+- [Tailwind CSS](https://tailwindcss.com/) - styling
+  - [DaisyUI](https://daisyui.com/) - Tailwind UI elements
+- [Alpine.js](https://alpinejs.dev/) - UI interactions
+- [Charmbracelet's log](https://charm.sh/) - logging
+- [cng](https://github.com/danawoodman/cng) - file watcher
 
 ## Setup
 
@@ -25,3 +26,7 @@ go mod download
 Now you can run the dev server with `make` or `make dev` and open <http://localhost:7878> in your browser.
 
 Build the binary with `make build` and run it with `./bin/server`.
+
+## License
+
+MIT
