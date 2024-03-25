@@ -8,7 +8,7 @@ dev:
 	@make -j dev-server dev-templ dev-tailwind
 
 dev-server:
-	@gochange -k -i '**/*.go' '**/*.html' 'views/public/**/*' -- go run ./cmd/server
+	@cng -k -i '**/*.go' '**/*.html' 'views/public/**/*' -- go run ./cmd/server
 
 dev-templ:
 	@templ generate --watch
