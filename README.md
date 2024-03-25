@@ -29,6 +29,8 @@ go install github.com/a-h/templ/cmd/templ@latest
 npm install
 ```
 
+Download a binary of [cng](https://github.com/danawoodman/cng/releases) and put it on your path for file watching
+
 ## Development
 
 Now you can run the dev server with `make` or `make dev` and open <http://localhost:7878> in your browser.
